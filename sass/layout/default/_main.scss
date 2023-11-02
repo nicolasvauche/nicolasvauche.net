@@ -1,0 +1,19 @@
+.app-main {
+    @include displayGrid(repeat(2, 1fr));
+    overflow: hidden;
+
+    @include respondTo(xs) {
+        grid-template-columns: 1fr;
+        height: 100dvh;
+        overflow-y: auto;
+        -ms-overflow-style: none;
+        scrollbar-width: none;
+        scroll-snap-type: y mandatory;
+
+        &::-webkit-scrollbar {
+            display: none;
+        }
+    }
+
+    @import "./section/";
+}

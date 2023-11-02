@@ -1,0 +1,21 @@
+.blinking_once {
+    animation: blinkingOnce 1.2s;
+}
+
+.blinking_second {
+    animation: blinkingOnce 0.6s 0.6s;
+}
+
+.visible-xs {
+    display: none !important;
+
+    @include respondTo(xs) {
+        display: initial !important;
+    }
+}
+
+.hidden-xs {
+    @include respondTo(xs) {
+        display: none !important;
+    }
+}

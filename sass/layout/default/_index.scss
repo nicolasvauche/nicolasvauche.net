@@ -1,0 +1,11 @@
+html {
+    body {
+        font-family: $font-primary;
+        color: $color-white;
+        background-color: $color-black;
+        background-image: $bg-noise;
+        overflow: hidden;
+
+        @import "./main";
+    }
+}

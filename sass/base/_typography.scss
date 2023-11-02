@@ -1,0 +1,46 @@
+h1 {
+    margin: 0.75em 0;
+    font-size: 2rem;
+    font-weight: bold;
+    color: $color-yellow;
+}
+
+h2 {
+    margin: 0.75em 0;
+    font-size: 1.5rem;
+    font-weight: bold;
+    transition: color 1s ease;
+}
+
+hr {
+    margin-top: 0.5rem;
+    height: 1px;
+    width: 150px;
+    border: none;
+    background-color: $color-white;
+}
+
+p {
+    margin: 1rem 0;
+    line-height: 2;
+}
+
+a {
+    text-decoration: none;
+    color: $color-yellow;
+    transition: color 1s ease;
+
+    &:hover {
+        color: $color-white;
+    }
+}
+
+strong {
+    font-weight: bold;
+    transition: color 1s ease;
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+}

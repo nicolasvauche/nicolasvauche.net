@@ -1,0 +1,19 @@
+.app-section {
+    height: 50dvh;
+
+    @include respondTo(xs) {
+        height: 100dvh;
+        scroll-snap-align: start;
+    }
+
+    &:hover {
+        h2,
+        strong {
+            color: $color-yellow;
+        }
+    }
+
+    @import "./flip";
+
+    @import "./bgimage";
+}

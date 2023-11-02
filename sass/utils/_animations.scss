@@ -1,0 +1,56 @@
+@keyframes blinkingOnce {
+    0% {
+        opacity: 0;
+    }
+    10% {
+        opacity: 0.5;
+    }
+    29% {
+        opacity: 0;
+    }
+    40% {
+        opacity: 0.75;
+    }
+    49% {
+        opacity: 1;
+    }
+    54% {
+        opacity: 0.5;
+    }
+    60% {
+        opacity: 1;
+    }
+    70% {
+        opacity: 0.75;
+    }
+    99% {
+        opacity: 0.5;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+@keyframes bummer {
+    100% {
+        transform: scale(1, 1);
+    }
+}
+
+@keyframes rotate {
+    from {
+        transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+@keyframes unrotate {
+    from {
+        transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(-360deg);
+    }
+}

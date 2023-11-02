@@ -1,0 +1,135 @@
+&.flip {
+    perspective: 1000px;
+
+    .flip-inner {
+        position: relative;
+        width: 100%;
+        height: 100%;
+        text-align: center;
+        transition: transform 1s;
+        transform-style: preserve-3d;
+
+        .flip-front,
+        .flip-back {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            backface-visibility: hidden;
+
+            @include respondTo(xs) {
+                backface-visibility: visible;
+            }
+        }
+
+        .flip-front {
+            img {
+                @include respondTo(xs) {
+                    opacity: 0.25;
+                }
+            }
+        }
+
+        .flip-back {
+            transform: rotateY(180deg);
+
+            @include respondTo(xs) {
+                transform: rotateY(0deg) !important;
+            }
+
+            .logos {
+                display: grid;
+                grid-template-columns: repeat(2, 1fr);
+                justify-content: center;
+                align-items: center;
+                margin-top: 2em;
+                width: 80%;
+
+                .logo {
+                    text-align: center;
+                    transition-property: transform;
+                    transition-duration: 1s;
+
+                    &:nth-child(even) {
+                        a {
+                            &:hover {
+                                i,
+                                svg {
+                                    animation-name: rotate;
+                                    animation-duration: 0.8s;
+                                    animation-iteration-count: 1;
+                                    animation-timing-function: linear;
+                                }
+                            }
+                        }
+                    }
+
+                    &:nth-child(odd) {
+                        a {
+                            &:hover {
+                                i,
+                                svg {
+                                    animation-name: unrotate;
+                                    animation-duration: 0.8s;
+                                    animation-iteration-count: 1;
+                                    animation-timing-function: linear;
+                                }
+                            }
+                        }
+                    }
+
+                    .tooltip {
+                        position: relative;
+                        display: inline-block;
+
+                        &:hover {
+                            .tooltiptext {
+                                color: $color-white;
+                            }
+                        }
+
+                        .tooltiptext {
+                            position: absolute;
+                            top: 105%;
+                            left: 50%;
+                            z-index: 1;
+                            margin-left: -60px;
+                            padding: 5px 0;
+                            width: 120px;
+                            text-align: center;
+                            color: #3a3a3a;
+                            transition: color 1s ease;
+                        }
+                    }
+
+                    .linkedin {
+                        color: #007bb6 !important;
+                    }
+
+                    .file {
+                        color: #e67e22 !important;
+                    }
+                }
+            }
+        }
+    }
+
+    @include respondTo(sm) {
+        &:hover {
+            .flip-inner {
+                transform: rotateY(180deg);
+            }
+        }
+    }
+}
+
+&:first-of-type {
+    .flip-front {
+        animation: bummer 1.2s;
+        transform: scale(0, 0);
+        animation-fill-mode: forwards;
+    }
+}
